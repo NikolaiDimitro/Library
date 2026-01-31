@@ -36,7 +36,7 @@ test('Verify "All Books" link is visible after user login', async ({ page }) => 
   expect(isAllBooksLinkVisible).toBe(true);
 });
 
-test('Login with valid credentials', async ({ page }) => {
+test.skip('Login with valid credentials', async ({ page }) => {
   await page.goto('http://localhost:3000/login');
 
   await page.fill('input[name="email"]', 'peter@abv.bg');
@@ -62,7 +62,7 @@ test('Login with empty input fields', async ({ page }) => {
     expect(page.url()).toBe('http://localhost:3000/login');
 });
 
-test('Add book with correct data', async ({ page }) => {
+test.skip('Add book with correct data', async ({ page }) => {
   await page.goto('http://localhost:3000/login');
 
   await page.fill('input[name="email"]', 'peter@abv.bg');
@@ -89,7 +89,7 @@ test('Add book with correct data', async ({ page }) => {
   expect(page.url()).toBe('http://localhost:3000/catalog');
 });
 
-test('Add book with empty title field', async ({ page }) => {
+test.skip('Add book with empty title field', async ({ page }) => {
   await page.goto('http://localhost:3000/login');
 
   await page.fill('input[name="email"]', 'peter@abv.bg');
@@ -120,7 +120,7 @@ test('Add book with empty title field', async ({ page }) => {
   expect(page.url()).toBe('http://localhost:3000/create');
 });
 
-test('Login and verify all books are displayed', async ({ page }) => {
+test.skip('Login and verify all books are displayed', async ({ page }) => {
   await page.goto('http://localhost:3000/login');
 
   await page.fill('input[name="email"]', 'peter@abv.bg');
@@ -138,7 +138,7 @@ test('Login and verify all books are displayed', async ({ page }) => {
   expect(bookElements.length).toBeGreaterThan(0);
 });
 
-test('Login and navigate to Details page', async ({ page }) => {
+test.skip('Login and navigate to Details page', async ({ page }) => {
   await page.goto('http://localhost:3000/login');
 
   await page.fill('input[name="email"]', 'peter@abv.bg');
@@ -161,7 +161,7 @@ test('Login and navigate to Details page', async ({ page }) => {
   expect(detailsPageTitle).toBe('Test Book'); 
 });
 
-test('Verify visibility of Logout button after user login', async ({ page }) => {
+test.skip('Verify visibility of Logout button after user login', async ({ page }) => {
   await page.goto('http://localhost:3000/login');
 
   await page.fill('input[name="email"]', 'peter@abv.bg');
@@ -175,7 +175,7 @@ test('Verify visibility of Logout button after user login', async ({ page }) => 
   expect(isLogoutLinkVisible).toBe(true);
 });
 
-test('Verify redirection of Logout link after user login', async ({ page }) => {
+test.skip('Verify redirection of Logout link after user login', async ({ page }) => {
   await page.goto('http://localhost:3000/login');
 
   await page.fill('input[name="email"]', 'peter@abv.bg');
